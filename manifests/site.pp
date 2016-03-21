@@ -42,6 +42,6 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  notify { "Hello, my name is ${::hostname} welcome to github": }
+  notify { "Hello, my name is ${::hostname} welcome to github@@": }
 }
 #testing puppet deploy
