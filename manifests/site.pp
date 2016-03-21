@@ -52,10 +52,3 @@ file { '/etc/motd':
   content => 'Hey, Puppet is fun',
 }
 }
-
-package { 'cowsay':
-  ensure   => present,
-  provider => gem,
-}
-#testing puppet deploy
-
