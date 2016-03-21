@@ -51,9 +51,11 @@ file { '/etc/motd':
   mode => '0644',
   content => 'Hey, Puppet is fun',
 }
+}
+
 package { 'cowsay':
   ensure   => present,
   provider => gem,
 }
 #testing puppet deploy
-}
+
