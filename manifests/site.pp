@@ -43,16 +43,17 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}. welcome to github@@":}
-}
+
 file { '/etc/motd':
   ensure => file,
   owner => 'root',
   group => 'root',
   mode => '0644',
-  content => "Hey, Puppet is fun!\n",
+  content => 'Hey, Puppet is fun',
 }
 package { 'cowsay':
   ensure   => present,
   provider => gem,
 }
 #testing puppet deploy
+}
