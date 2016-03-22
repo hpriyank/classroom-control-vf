@@ -53,10 +53,10 @@ notify { "Hello, my name is ${::hostname}": }
        path => '/usr/bin:/usr/local/bin',
        creates => '/etc/motd',
        } 
-host { 'testing.puppetlabs.vm':
+host 
+{ 'hpriyank.puppetlabs.vm':
 ensure => present,
 ip => '127.0.0.1',
 }
-
 }
 
