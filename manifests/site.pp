@@ -49,9 +49,10 @@ notify { "Hello, my name is ${::hostname}": }
 # mode => '0644',
 # content => "Today I learned what it means to manage state using Puppet.\n",
 #}
-exec { "Welcome":
-path => '/usr/bin:/usr/local/bin',
-creates => '/etc/motd',
-}
+ exec {"cowsay 'Hi  This is ${::fqdn}!' > /etc/motd":
+       path => '/usr/bin:/usr/local/bin',
+       creates => '/etc/motd',
+       } 
+
 }
 
