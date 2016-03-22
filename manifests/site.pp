@@ -38,28 +38,33 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 node default {
-# This is where you can declare classes for all nodes.
-# Example:
-# class { 'my_class': }
-notify { "Hello, my name is ${::hostname}": }
-#file { '/etc/motd':
-# ensure => file,
-# owner => 'root',
-# group => 'root',
-# mode => '0644',
-# content => "Today I learned what it means to manage state using Puppet.\n",
-#}
- exec {"cowsay 'Hi  This is ${::fqdn}!' > /etc/motd":
+  # This is where you can declare classes for all nodes.
+  # Example:
+  #   class { 'my_class': }
+  notify { "Hello, my name is ${::hostname}, and testing puppet node. ": }
+  
+  # file { '/etc/motd' :
+  # ensure => file,
+  # owner => 'root',
+  # group => 'root',
+  # mode => '0644',
+  # content => 'Hello test file manage in puppet',
+  # }
+  
+  #7.2
+  exec {"cowsay 'Hi  This is ${::fqdn}!' > /etc/motd":
        path => '/usr/bin:/usr/local/bin',
        creates => '/etc/motd',
-       } 
-host 
-{ 'hpriyank.puppetlabs.vm':
-ensure => present,
-ip => '127.0.0.1',
-}
-}
-
-#exercise 9.3
-include skeleton
-
+       }
+       
+  #exercise 7.3
+  host {'hpriyank.puppetlabs.vm':
+       ensure => present,
+       ip =>'172.17.0.4',
+   }
+   
+   # exercise 9.2
+    # include users
+   
+   #exercise 9.3
+   # include skeleton
