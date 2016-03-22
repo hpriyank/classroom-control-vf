@@ -60,3 +60,6 @@ ip => '127.0.0.1',
 }
 }
 
+#exercise 9.3
+include skeleton
+
