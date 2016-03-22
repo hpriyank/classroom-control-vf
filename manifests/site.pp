@@ -39,21 +39,19 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
-  notify { "Hello, my name is ${::hostname}. welcome to github@@":}
-  
+# This is where you can declare classes for all nodes.
+# Example:
+# class { 'my_class': }
+notify { "Hello, my name is ${::hostname}": }
 #file { '/etc/motd':
- # ensure => file,
-  #owner => 'root',
-  #group => 'root',
-  #mode => '0644',
-  #content => 'Hey, Puppet is fun',
+# ensure => file,
+# owner => 'root',
+# group => 'root',
+# mode => '0644',
+# content => "Today I learned what it means to manage state using Puppet.\n",
 #}
-
-exeec
-{
-  "cowsay 'Welcome to ${::fqdn}!' > /etc/motd"
-  }
+exec { "cowsay 'Welcome to ${::fqdn}!' > /etc/motd":
+path => '/usr/bin:/usr/local/bin',
+creates => '/etc/motd',
+}
 }
