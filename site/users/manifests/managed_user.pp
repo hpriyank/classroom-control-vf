@@ -1,9 +1,7 @@
-#users::managed_user {'foo':
-#	group => 'foo',
-# }
+
 define users::managed_user {
 	$group = $title,
-){
+{
 	user{$title:
 		ensure => present,
 	}
