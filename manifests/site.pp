@@ -68,7 +68,10 @@ node default {
    
    #exercise 9.3
    # include skeleton
-
+ if $::virtual !='physical'{
+   $vmname= capitalize($::virtual)
+   notify{ " This is a virtual machine. Name is $vmname":}
+   } 
 include users
 
 }
