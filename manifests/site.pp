@@ -42,7 +42,13 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}, and testing puppet node. ": }
-  
+ 
+# Example:
+# class { 'my_class': }
+$message = hiera('message')
+notify { $message: }
+}
+
   # file { '/etc/motd' :
   # ensure => file,
   # owner => 'root',
