@@ -44,9 +44,9 @@ node default {
  
 # Example:
 # class { 'my_class': }
-$message = hiera('message')
-notify { $message: }
-}
+$my_message = hiera('message')
+notify { $my_message: }
+
 
   # file { '/etc/motd' :
   # ensure => file,
